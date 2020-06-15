@@ -2,15 +2,15 @@ import React from 'react';
 import { withRouter } from 'react-router';
 import './menu-item.styles.scss';
 
-const MenuItem = ({title, imageUrl, linkUrl, size, history, match}) => (
+const MenuItem = (props) => (
     <div 
-        className={`${size} menu-item`} onClick={() => history.push(`${match.url}${linkUrl}`)}>
+        className={`${props.size} menu-item`} onClick={() => props.history.push(`${props.match.url}${props.linkUrl}`)}>
         <div className='background-image' style ={{
-        backgroundImage: `url(${imageUrl})`
+        backgroundImage: `url(${props.imageUrl})`
     }} />
                 <div className='content'>
                     <h1 className='title'>
-                        {title.toUpperCase()}
+                        {props.title.toUpperCase()}
                     </h1>
                     <span className='subtitle'>
                         SHOP NOW
